@@ -1,0 +1,1721 @@
+{
+	"info": {
+		"_postman_id": "89db952f-6159-4ec0-a6ac-ed62dd53455a",
+		"name": "q-finder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "adminLogin",
+					"item": [
+						{
+							"name": "adminLogin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/login",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"item": [
+						{
+							"name": "adminDashboard",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{baseurl}}admin/dashboard",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"dashboard"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "getUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getUser",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingle",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSingleUser",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSingleUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeUserStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "646117ffd1e597b9423abe97",
+											"type": "default"
+										},
+										{
+											"key": "status",
+											"value": "true",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/user/changeStatus",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"user",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "addCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "imgfirst-New",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Administrator/Downloads/images.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/addCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"addCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64611674807f0ad16400457a",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSingleCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSingleCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "646875b8d99d50f502cb72cd",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "bike25000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Administrator/Downloads/Untitled.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/updateCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"updateCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "changeCategoryStatus",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64611674807f0ad16400457a",
+											"type": "default"
+										},
+										{
+											"key": "status",
+											"value": "false",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/category/changeStatus",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"category",
+										"changeStatus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{baseurl}}admin/category/delete?_id=646128cde6963d4f974d3ae5",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"category",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "646128cde6963d4f974d3ae5"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "addPost",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "646111c53ec4c3e08ef2836e",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "646111c53ec4c3e08ef2836e",
+											"type": "default"
+										},
+										{
+											"key": "subCategoryId",
+											"value": "646128cde6963d4f974d3ae5",
+											"type": "default"
+										},
+										{
+											"key": "title",
+											"value": "mobile phone",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "redmi a1",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "8000",
+											"type": "default"
+										},
+										{
+											"key": "negotiable",
+											"value": "",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "featured",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"value": "img3",
+											"type": "default"
+										},
+										{
+											"key": "latitude",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "longitude",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "ludhiana",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "punjab",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/addPost",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"addPost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getPost",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getPost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSinglePost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64624739da42967198233aba",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSinglePost",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSinglePost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePost",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "64624739da42967198233aba",
+											"type": "default"
+										},
+										{
+											"key": "title",
+											"value": "hello hi",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/updatePost",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"updatePost"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "subCategory",
+					"item": [
+						{
+							"name": "addSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "categoryId",
+											"value": "646128cde6963d4f974d3ae5",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "abc1234567",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Administrator/Downloads/images.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/addSubCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"addSubCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSubcategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSubcategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSubcategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "644d253415c19e1d5cfc95ea",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSingleSubCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSingleSubCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "646779ea35846a27e91f237c",
+											"type": "default"
+										},
+										{
+											"key": "categoryId",
+											"value": "646128cde6963d4f974d3ae5",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "honda new",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Administrator/Downloads/Untitled.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/updateSubCategory",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"updateSubCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteSubCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "645350ed8c59513501b5efe6",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/subCategory/delete?_id=6464d4998d66033126e8a574",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"subCategory",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "6464d4998d66033126e8a574"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "userInfo",
+					"item": [
+						{
+							"name": "getUserInfo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}admin/getUserInfo",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getUserInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleUserInfo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "644d2fcab05841a293266dc3",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSingleUserInfo",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSingleUserInfo"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "purchase",
+					"item": [
+						{
+							"name": "getPurchase",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseurl}}admin/getPurchase",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getPurchase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSinglePurchase",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6464f5279b602f02ea31c009",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSinglePurchase",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSinglePurchase"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contact",
+					"item": [
+						{
+							"name": "getContact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getContact",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getContact"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleContact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "646254f94c3d17b42744910d",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}admin/getSingleContact",
+									"host": [
+										"{{baseurl}}admin"
+									],
+									"path": [
+										"getSingleContact"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "customerAuth.",
+					"item": [
+						{
+							"name": "customerLogin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "v@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/login",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer",
+					"item": [
+						{
+							"name": "addCustomer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "hello i am v",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "helloiamv@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345",
+											"type": "default"
+										},
+										{
+											"key": "contact",
+											"value": "987654321",
+											"type": "default"
+										},
+										{
+											"key": "address",
+											"value": "lmv",
+											"type": "default"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addCustomer",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addCustomer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleCustomer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64686c636f0d57a5afc87e56",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleCustomer",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleCustomer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateCustomer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "646a3c8700b033fb2162c8fa",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "Bhai34@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "passwordpassword",
+											"type": "default"
+										},
+										{
+											"key": "gender",
+											"value": "female",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/updateCustomer",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"updateCustomer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "getCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getCustomer",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getCustomer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "646128cde6963d4f974d3ae5",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleCategory",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleCategory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "subCategory",
+					"item": [
+						{
+							"name": "getSingleSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6464e61893ed68304fcebc64",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleSubCategory",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleSubCategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSubCategory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSubCategory",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSubCategory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "purchase",
+					"item": [
+						{
+							"name": "addPurchase",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "userId",
+											"value": "646117ffd1e597b9423abe97",
+											"type": "default"
+										},
+										{
+											"key": "postId",
+											"value": "64624739da42967198233aba",
+											"type": "default"
+										},
+										{
+											"key": "price",
+											"value": "130000",
+											"type": "default"
+										},
+										{
+											"key": "contact",
+											"value": "98484546564",
+											"type": "default"
+										},
+										{
+											"key": "address",
+											"value": "demo",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addPurchase",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addPurchase"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSinglePurchase",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6464f5279b602f02ea31c009",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSinglePurchase",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSinglePurchase"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contact",
+					"item": [
+						{
+							"name": "addContact",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "bbb",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "b@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "subject",
+											"value": "hello",
+											"type": "default"
+										},
+										{
+											"key": "message",
+											"value": "all is gud here",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addContact",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addContact"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleContact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "646254f94c3d17b42744910d",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleContact",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleContact"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "addPost",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addPost",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addPost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getPost",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getPost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSinglePost",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "64624739da42967198233aba",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSinglePost",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSinglePost"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePost",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_id",
+											"value": "64624739da42967198233aba",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/updatePost",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"updatePost"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "addUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "anant",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "anant@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "token",
+											"value": "",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addUser",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "644bd55f8f6852d0816ff556",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleUser",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userUpdate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "646117ffd1e597b9423abe97",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "ccch@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "name",
+											"value": "vishal",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/updateUser",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"updateUser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "userInfo",
+					"item": [
+						{
+							"name": "addUserInfo",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "aaa",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "vv@gmail.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "default"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "default"
+										},
+										{
+											"key": "city",
+											"value": "asr",
+											"type": "default"
+										},
+										{
+											"key": "state",
+											"value": "punjab",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/addUserInfo",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"addUserInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleUserInfo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "644d2fcab05841a293266dc3",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/getSingleUserInfo",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"getSingleUserInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUserInfo",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "_id",
+											"value": "6462547f4c3d17b427449102",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "v@gmail.com",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseurl}}customer/updateUserInfo",
+									"host": [
+										"{{baseurl}}customer"
+									],
+									"path": [
+										"updateUserInfo"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
